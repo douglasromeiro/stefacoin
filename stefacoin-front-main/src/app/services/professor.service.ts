@@ -13,13 +13,15 @@ export class ProfessorService {
   constructor(private httpClient: HttpClient) {}
 
   // #pegabandeira
-  listar(filtro: Partial<Professor>): Observable<Professor[]> {
-    return this.httpClient.get<Professor[]>(URL, {
+  /*listar(filtro: Partial<Professor>): Observable<Professor> {
+    return this.httpClient.get<Professor>(URL, {
       params: filtro,
     });
-  }
+  }*/
 
-  obter() {}
+  obter() {
+    return this.httpClient.get<Professor[]>(URL);
+  }
 
   incluir(professor: Professor): Observable<Mensagem> {
     return this.httpClient.post<Mensagem>(URL, professor);

@@ -53,16 +53,16 @@ class App {
 
   // #pegabandeira
   private privateRoutes() {
-    this.authMiddleware();
+    //this.authMiddleware();
     this.app.use('/stefanini', AlunoRouter);
     this.app.use('/stefanini', AulaRouter);
     this.app.use('/stefanini', CursoRouter);
     this.app.use('/stefanini', ProfessorRouter);
   }
 
-  private authMiddleware() {
+  /*private authMiddleware() {
     this.app.use(auth);
-  }
+  }*/
 }
 
 export default new App().app;

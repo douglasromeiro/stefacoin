@@ -6,6 +6,7 @@ import Mensagem from '../utils/mensagem';
 const router = express.Router();
 
 router.post('/professor', async (req: Request, res: Response, next: NextFunction) => {
+  console.log("cheguei aqui também");
   try {
     const mensagem: Mensagem = await new ProfessorController().incluir(req.body);
     res.json(mensagem);

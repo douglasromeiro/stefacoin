@@ -1,4 +1,4 @@
-import bcrypt from 'bcryptjs';
+import * as bcrypt from 'bcryptjs';
 import BusinessException from '../utils/exceptions/business.exception';
 import UnauthorizedException from '../utils/exceptions/unauthorized.exception';
 
