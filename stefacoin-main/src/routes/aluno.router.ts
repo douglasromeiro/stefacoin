@@ -1,4 +1,3 @@
-import { Tables } from './../utils/tables.enum';
 import express, { json, NextFunction, Request, Response } from 'express';
 import AlunoController from '../controllers/aluno.controller';
 import Aluno from '../entities/aluno.entity';
@@ -7,8 +6,17 @@ import Mensagem from '../utils/mensagem';
 const router = express.Router();
 
 router.post('/aluno', async (req: Request, res: Response, next: NextFunction) => {
+  const alunos: Aluno[] = await new AlunoController().listar();
+  const listEmail = alunos.filter(function(item){
+    return {email: item.email}
+  })
+  console.log(listEmail)
+  
   try {
     const mensagem: Mensagem = await new AlunoController().incluir(req.body);
+    if(req.body.email == listEmail){
+      console.log("existe!")
+    }
     res.json(mensagem);
   } catch (e) {
     next(e);
@@ -48,7 +56,7 @@ router.get('/aluno/:id', async (req: Request, res: Response, next: NextFunction)
 router.get('/aluno', async (req: Request, res: Response, next: NextFunction) => {
   try {
     const alunos: Aluno[] = await new AlunoController().listar();
-    res.json(alunos[0]['ALUNO']);
+    res.json(alunos);
   } catch (e) {
     next(e);
   }

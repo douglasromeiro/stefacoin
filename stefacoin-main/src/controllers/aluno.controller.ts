@@ -6,25 +6,27 @@ import { FilterQuery } from '../utils/database/database';
 import Mensagem from '../utils/mensagem';
 import { Validador } from '../utils/utils';
 
+
 export default class AlunoController {
   async obterPorId(id: number): Promise<Aluno> {
     Validador.validarParametros([{ id }]);
     return await AlunoRepository.obterPorId(id);
   }
 
-  async obter(filtro: FilterQuery<Aluno> = {}): Promise<Aluno> {
+  async obter(filtro: FilterQuery<Aluno> = {tipo: 2}): Promise<Aluno> {
     return await AlunoRepository.obter(filtro);
   }
 
-  //Resolvido #pegabandeira
-  async listar(filtro: FilterQuery<Aluno> = {}): Promise<Aluno[]> {
-    return await (await AlunoRepository.listar(filtro));
+  // #pegabandeira
+  async listar(filtro: FilterQuery<Aluno> = {tipo: 2}): Promise<Aluno[]> {
+    return await AlunoRepository.listar(filtro);
   }
 
   // #pegabandeira
   async incluir(aluno: Aluno) {
     const { nome, formacao, idade, email, senha } = aluno;
     Validador.validarParametros([{ nome }, { formacao }, { idade }, { email }, { senha }]);
+
     const id = await AlunoRepository.incluir(aluno);
     return new Mensagem('Aluno incluido com sucesso!', {
       id,

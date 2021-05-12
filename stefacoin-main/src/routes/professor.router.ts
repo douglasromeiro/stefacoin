@@ -48,7 +48,7 @@ router.get('/professor/:id', async (req: Request, res: Response, next: NextFunct
 router.get('/professor', async (req: Request, res: Response, next: NextFunction) => {
   try {
     const professores: Professor[] = await new ProfessorController().listar();
-    res.json(professores[0]['PROFESSOR']);
+    res.json(professores);
   } catch (e) {
     next(e);
   }

@@ -10,7 +10,7 @@ class AlunoRepository extends Repository<Aluno> {
     super(Tables.USUARIO);
   }
 
-  async incluir(aluno: Aluno) {
+  async incluir(aluno: Aluno ) {
     aluno.senha = Validador.criptografarSenha(aluno.senha);
     aluno.tipo = TipoUsuario.ALUNO;
     return await super.incluir(aluno);
