@@ -23,4 +23,5 @@ export class HeaderComponent implements OnInit {
   showHeader() {
     return this.authService.isAuthenticated();
   }
+
 }

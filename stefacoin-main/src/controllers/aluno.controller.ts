@@ -1,3 +1,5 @@
+import { Tables } from './../utils/tables.enum';
+
 import Aluno from '../entities/aluno.entity';
 import AlunoRepository from '../repositories/aluno.repository';
 import { FilterQuery } from '../utils/database/database';
@@ -14,9 +16,9 @@ export default class AlunoController {
     return await AlunoRepository.obter(filtro);
   }
 
-  // #pegabandeira
+  //Resolvido #pegabandeira
   async listar(filtro: FilterQuery<Aluno> = {}): Promise<Aluno[]> {
-    return await AlunoRepository.listar(filtro);
+    return await (await AlunoRepository.listar(filtro));
   }
 
   // #pegabandeira

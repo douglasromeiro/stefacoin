@@ -1,4 +1,5 @@
-import express, { NextFunction, Request, Response } from 'express';
+import { Tables } from './../utils/tables.enum';
+import express, { json, NextFunction, Request, Response } from 'express';
 import AlunoController from '../controllers/aluno.controller';
 import Aluno from '../entities/aluno.entity';
 import Mensagem from '../utils/mensagem';
@@ -47,7 +48,7 @@ router.get('/aluno/:id', async (req: Request, res: Response, next: NextFunction)
 router.get('/aluno', async (req: Request, res: Response, next: NextFunction) => {
   try {
     const alunos: Aluno[] = await new AlunoController().listar();
-    res.json(alunos);
+    res.json(alunos[0]['ALUNO']);
   } catch (e) {
     next(e);
   }

@@ -1,8 +1,11 @@
+import { TipoUsuario } from './../../../../stefacoin-main/src/utils/tipo-usuario.enum';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { fromEventPattern, Observable } from 'rxjs';
 import { Mensagem } from '../models/mensagem';
 import { Professor } from '../models/professor';
+import { tap } from 'rxjs/operators';
+
 
 const URL = 'http://localhost:3000/stefanini/professor';
 
@@ -15,12 +18,15 @@ export class ProfessorService {
   // #pegabandeira
   /*listar(filtro: Partial<Professor>): Observable<Professor> {
     return this.httpClient.get<Professor>(URL, {
-      params: filtro,
+      params: TipoUsuario.PROFESSOR,
     });
   }*/
 
   obter() {
-    return this.httpClient.get<Professor[]>(URL);
+    return this.httpClient.get<Professor[]>(URL)
+    .pipe(
+      tap(console.log)
+    );
   }
 
   incluir(professor: Professor): Observable<Mensagem> {

@@ -1,3 +1,4 @@
+import { ListarProfessorComponent } from './pages/private/professor/listar-professor/listar-professor.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuardService } from './guards/auth-guard.service';
@@ -19,6 +20,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+  },
+  {
+    path:'professores-lista',
+    component: ListarProfessorComponent,
   },
   {
     path: '**',
