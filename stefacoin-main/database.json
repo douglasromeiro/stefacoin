@@ -1,1 +1,23 @@
-{"CURSO":[],"ALUNO":[],"PROFESSOR":[],"USUARIO":[{"nome":"Professor 1","email":"prof1@email.com","senha":"$2a$08$hUj.5XlqNyThl3VNEPutuOlIUr3E679N2kknERMGeR6mMOi5awmCi","tipo":1,"id":1},{"nome":"Aluno 1","formacao":"Sistema de Informacao","idade":20,"email":"aluno1@email.com","senha":"$2a$08$w0r2zw5Barew36ok7JApwORJp4pyE/1UVI4y3DwpabRHx8xhkKwhG","tipo":2,"id":2},{"nome":"Aluno 2","formacao":"Sistema de Informacao","idade":19,"email":"aluno2@email.com","senha":"$2a$08$jszbcZ27j9oHBTCs8CG6yubae7F/5aMVAArBPg8EyXLJ4IpyScAka","tipo":2,"id":3},{"nome":"Aluno 2","formacao":"Sistema de Informacao","idade":19,"email":"aluno2@email.com","senha":"$2a$08$yB/exeLas6h5lZBxPVvTn.Sb21/2UXqoVLDDeV19VzSTebUUMZmmq","tipo":2,"id":4},{"nome":"Aluno 2","formacao":"Sistema de Informacao","idade":19,"email":"aluno2@email.com","senha":"$2a$08$gdETRRwb2LAx5E6ZWtmIPuJbbztfYaTiCVenKD4eK34cp/i3EvztK","tipo":2,"id":5},{"nome":"Aluno 2","formacao":"Sistema de Informacao","idade":19,"email":"aluno2@email.com","senha":"$2a$08$kC6sI2xfF0c5lVImyWneWOkBgLA4/ZpAR.vOHIgKfBcHmUPj.RLn2","tipo":2,"id":6},{"nome":"Aluno 2","formacao":"Sistema de Informacao","idade":19,"email":"aluno2@email.com","senha":"$2a$08$uArZeTN/AdMqdSoiLQIZrO9GAmk3YKmFNfl0J0zAy5uYeyhExX61e","tipo":2,"id":7},{"nome":"Aluno 2","formacao":"Sistema de Informacao","idade":19,"email":"aluno2@email.com","senha":"$2a$08$MQ.Z54lf.FV3yXf/JmTk1e7/sodU6SFjmlMjj7vJvJFjK/fufWWIa","tipo":2,"id":8}]}
+{
+  "CURSO": [],
+  "ALUNO": [],
+  "PROFESSOR": [],
+  "USUARIO": [
+    {
+      "nome": "Professor 1",
+      "email": "prof1@email.com",
+      "senha": "$2a$08$hUj.5XlqNyThl3VNEPutuOlIUr3E679N2kknERMGeR6mMOi5awmCi",
+      "tipo": 1,
+      "id": 1
+    },
+    {
+      "nome": "Aluno 1",
+      "formacao": "Sistema de Informacao",
+      "idade": 20,
+      "email": "aluno1@email.com",
+      "senha": "$2a$08$w0r2zw5Barew36ok7JApwORJp4pyE/1UVI4y3DwpabRHx8xhkKwhG",
+      "tipo": 2,
+      "id": 2
+    }
+  ]
+}

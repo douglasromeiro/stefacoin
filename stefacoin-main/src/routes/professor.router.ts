@@ -5,9 +5,17 @@ import Mensagem from '../utils/mensagem';
 
 const router = express.Router();
 
+
 router.post('/professor', async (req: Request, res: Response, next: NextFunction) => {
-  console.log("cheguei aqui também");
+  const professores: Professor[] = await new ProfessorController().listar();
+  const listEmail = professores.map(function(item){
+    return {email: item.email}
+  })
   try {
+    if(listEmail.indexOf(req.body.email)){
+      console.log("Já existe um usuário com esse e-mail cadastrado!");
+      stop();
+    }
     const mensagem: Mensagem = await new ProfessorController().incluir(req.body);
     res.json(mensagem);
   } catch (e) {

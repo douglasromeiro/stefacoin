@@ -19,7 +19,7 @@ export class ListarProfessorComponent implements OnInit {
               private toastr: ToastrService) { }
 
   ngOnInit(): void {
-    this.serviceProfessor.obter().subscribe(
+    this.serviceProfessor.listar().subscribe(
       professores => 
        this.professor = professores);
   }

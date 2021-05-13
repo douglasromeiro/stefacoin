@@ -1,22 +1,23 @@
+import e from 'express';
 import express, { json, NextFunction, Request, Response } from 'express';
 import AlunoController from '../controllers/aluno.controller';
 import Aluno from '../entities/aluno.entity';
+import Exception from '../utils/exceptions/exception';
 import Mensagem from '../utils/mensagem';
 
 const router = express.Router();
 
 router.post('/aluno', async (req: Request, res: Response, next: NextFunction) => {
   const alunos: Aluno[] = await new AlunoController().listar();
-  const listEmail = alunos.filter(function(item){
+  const listEmail = alunos.map(function(item){
     return {email: item.email}
   })
-  console.log(listEmail)
-  
   try {
-    const mensagem: Mensagem = await new AlunoController().incluir(req.body);
-    if(req.body.email == listEmail){
-      console.log("existe!")
+    if(listEmail.indexOf(req.body.email)){
+      console.log("Já existe um usuário com esse e-mail cadastrado!");
+      stop()
     }
+    const mensagem: Mensagem = await new AlunoController().incluir(req.body);
     res.json(mensagem);
   } catch (e) {
     next(e);

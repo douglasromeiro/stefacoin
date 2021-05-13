@@ -7,10 +7,12 @@
           <th scope="col">E-mail</th>
           <th scope="col">Senha</th>
           <th scope="col">Tipo</th>
+          <th scope="col">Opções</th>
+          
         </tr>
       </thead>
       <tbody  *ngFor="let p of professor">
-        <tr *ngIf="p.tipo == 1">
+        <tr *ngIf="p.tipo === 1">
           <td>{{ p.id }}</td>
           <td>{{ p.nome }}</td>
           <td>{{ p.email }}</td>
