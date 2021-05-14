@@ -12,16 +12,15 @@
         </tr>
       </thead>
       <tbody  *ngFor="let p of professor">
-        <tr *ngIf="p.tipo === 1">
+        <tr >
           <td>{{ p.id }}</td>
           <td>{{ p.nome }}</td>
           <td>{{ p.email }}</td>
-          <td>{{ '***********' }}</td>
           <td>{{ p.tipo }}</td>
           <td> 
-              <button class="btn btn-outline-warning mb1 btn-sm">Atualizar</button>
+              <button class="btn btn-outline-warning mb1 btn-sm" (click)="atualizarProfessor(p.id)">Atualizar</button>
               {{' '}}
-              <button class="btn btn-outline-danger mb1 btn-sm">Remover</button>
+              <button class="btn btn-outline-danger mb1 btn-sm"(click)="removerProfessor(p.id)">Remover</button>
           </td>
         </tr>
       </tbody>

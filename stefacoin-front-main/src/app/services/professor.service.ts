@@ -1,7 +1,7 @@
 import { TipoUsuario } from './../../../../stefacoin-main/src/utils/tipo-usuario.enum';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { fromEventPattern, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Mensagem } from '../models/mensagem';
 import { Professor } from '../models/professor';
 import { tap } from 'rxjs/operators';
@@ -31,7 +31,16 @@ export class ProfessorService {
     return this.httpClient.post<Mensagem>(URL, professor);
   }
 
-  alterar() {}
 
-  excluir() {}
+  alterar(professor: Professor, id: number): Observable<Mensagem>{
+    return this.httpClient.put<Mensagem>(`${URL}/${id}`, professor);
+  }
+
+  obterPorId(id: number){
+    return this.httpClient.get<Professor>(`${URL}/${id}`)
+  }
+
+  delete(id: number){
+    return this.httpClient.delete<Professor>(`${URL}/${id}`)
+  }
 }

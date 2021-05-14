@@ -1,0 +1,26 @@
+<form id="cad-curso" (ngSubmit)="editaCurso()">
+    <div class="form-group">
+      <label for="nome-control">Nome do Curso</label>
+      <input
+        type="text"
+        class="form-control"
+        id="nome-control"
+        placeholder="Nome do Curso"
+        ngModel
+        [ngModel]="curso.nome"
+      />
+    </div>
+    <div class="form-group">
+      <label for="descricao-control">Descrição</label>
+      <textarea
+        class="form-control"
+        id="descricao-control"
+        [ngModel]="curso.descricao"
+        rows="3"
+        ngmode
+      ></textarea>
+    </div>
+    <div class="form-group"></div>
+    <button type="submit" class="btn btn-primary">Cadastrar</button>
+  </form>
+  

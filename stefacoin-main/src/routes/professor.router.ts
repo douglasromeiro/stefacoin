@@ -14,7 +14,6 @@ router.post('/professor', async (req: Request, res: Response, next: NextFunction
   try {
     if(listEmail.indexOf(req.body.email)){
       console.log("Já existe um usuário com esse e-mail cadastrado!");
-      stop();
     }
     const mensagem: Mensagem = await new ProfessorController().incluir(req.body);
     res.json(mensagem);

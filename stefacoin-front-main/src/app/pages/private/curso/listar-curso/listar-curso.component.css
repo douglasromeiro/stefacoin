@@ -1,0 +1,27 @@
+#colum-curso {
+  margin-top: 25px;
+  flex: auto;
+}
+
+#btn-cad{
+  color: #fff;
+  background-color: green;
+  border: none;
+  height: 60px;
+  line-height: 30px;
+  padding: 0 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+
+}
+
+#inline{
+  display: inline;
+  padding-left: 720px;
+
+}
+
+.col{
+  padding-bottom: 5px;
+}

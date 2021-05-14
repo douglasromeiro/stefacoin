@@ -1,1 +1,55 @@
-{"CURSO":[{"nome":"Java teste","descricao":"Introdução ao JAVA","idProfessor":1,"aulas":["Introdução ao Java","sintaxe","Váriaveis","Primeiro código"],"id":1},{"nome":"JavaScript","descricao":"JavaScript Básico","idProfessor":1,"aulas":["Introdução ao JavaScript","Váriaveis","Classes e Funções","Algoritmo"],"id":2}],"ALUNO":[],"PROFESSOR":[],"USUARIO":[{"nome":"Professor 2","email":"prof2@email.com","senha":"$2a$08$kVq583.n1ybA8AYNMuSfuuGi3fax.lLihmKKxRvEcXlvePP/yZiFu","tipo":1,"id":1},{"nome":"Aluno 1","formacao":"Sistema de Informacao","idade":20,"email":"aluno1@email.com","senha":"$2a$08$w0r2zw5Barew36ok7JApwORJp4pyE/1UVI4y3DwpabRHx8xhkKwhG","tipo":2,"id":2}]}
+{
+  "CURSO": [
+    {
+      "nome": "Java teste",
+      "descricao": "Introdução ao JAVA",
+      "idProfessor": 1,
+      "aulas": [
+        "Introdução ao Java",
+        "sintaxe",
+        "Váriaveis",
+        "Primeiro código"
+      ],
+      "id": 1
+    },
+    {
+      "nome": "JavaScript",
+      "descricao": "JavaScript Básico",
+      "idProfessor": 1,
+      "aulas": [
+        "Introdução ao JavaScript",
+        "Váriaveis",
+        "Classes e Funções",
+        "Algoritmo"
+      ],
+      "id": 2
+    }
+  ],
+  "ALUNO": [],
+  "PROFESSOR": [],
+  "USUARIO": [
+    {
+      "nome": "Professor 2",
+      "email": "prof2@email.com",
+      "senha": "$2a$08$kVq583.n1ybA8AYNMuSfuuGi3fax.lLihmKKxRvEcXlvePP/yZiFu",
+      "tipo": 1,
+      "id": 1
+    },
+    {
+      "nome": "Aluno 1",
+      "formacao": "Sistema de Informacao",
+      "idade": 20,
+      "email": "aluno1@email.com",
+      "senha": "$2a$08$w0r2zw5Barew36ok7JApwORJp4pyE/1UVI4y3DwpabRHx8xhkKwhG",
+      "tipo": 2,
+      "id": 2
+    },
+    {
+      "nome": "prof3",
+      "email": "prof3@email.com",
+      "senha": "$2a$08$47Ixtl0olNrCTsuT6dWsKOoNf36278wmR8UHE4g3t6ysACX3BDqLm",
+      "tipo": 1,
+      "id": 3
+    }
+  ]
+}

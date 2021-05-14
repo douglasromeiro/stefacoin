@@ -1,3 +1,7 @@
+import { AulaComponent } from './pages/private/aula/aula.component';
+import { EditaCursoComponent } from './pages/private/edita-curso/edita-curso.component';
+import { CadastrarCursoComponent } from './pages/private/cadastrar-curso/cadastrar-curso.component';
+import { ListarCursoComponent } from './pages/private/curso/listar-curso/listar-curso.component';
 import { ListarProfessorComponent } from './pages/private/professor/listar-professor/listar-professor.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -23,7 +27,33 @@ const routes: Routes = [
   },
   {
     path:'professores-lista',
+    canActivate: [AuthGuardService],
     component: ListarProfessorComponent,
+  },
+  {
+    path:'professor-edit/:id',
+    canActivate: [AuthGuardService],
+    component: CadastroComponent,
+  },
+  {
+    path:'curso-listar',
+    canActivate: [AuthGuardService],
+    component: ListarCursoComponent,
+  },
+  {
+    path:'aula',
+    canActivate: [AuthGuardService],
+    component: AulaComponent,
+  },
+  {
+    path:'curso-cad',
+    canActivate: [AuthGuardService],
+    component: CadastrarCursoComponent,
+  },
+  {
+    path:'curso/:id',
+    canActivate: [AuthGuardService],
+    component: CadastrarCursoComponent,
   },
   {
     path: '**',
