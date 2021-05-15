@@ -64,8 +64,8 @@ export class AulaComponent implements OnInit {
       (error) => this.toastr.error("Preencha os campos que estão em branco"),
       () =>
         setTimeout(() => {
-          this.location.back();
-        }, 2000)
+          this.ngOnInit();
+        }, 1000)
     );
   }
 

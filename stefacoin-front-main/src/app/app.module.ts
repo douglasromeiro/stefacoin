@@ -21,6 +21,7 @@ import { ListarCursoComponent } from './pages/private/curso/listar-curso/listar-
 import { CadastrarCursoComponent } from './pages/private/cadastrar-curso/cadastrar-curso.component';
 import { EditaCursoComponent } from './pages/private/edita-curso/edita-curso.component';
 import { AulaComponent } from './pages/private/aula/aula.component';
+import { ProfIncludeCursoComponent } from './pages/private/prof-include-curso/prof-include-curso.component';
 
 export function tokenGetter() {
   return localStorage.getItem('jwttoken');
@@ -40,6 +41,7 @@ export function tokenGetter() {
     CadastrarCursoComponent,
     EditaCursoComponent,
     AulaComponent,
+    ProfIncludeCursoComponent,
   ],
   imports: [
     BrowserModule,

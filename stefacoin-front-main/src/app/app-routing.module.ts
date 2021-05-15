@@ -1,3 +1,4 @@
+import { ProfIncludeCursoComponent } from './pages/private/prof-include-curso/prof-include-curso.component';
 import { AulaComponent } from './pages/private/aula/aula.component';
 import { EditaCursoComponent } from './pages/private/edita-curso/edita-curso.component';
 import { CadastrarCursoComponent } from './pages/private/cadastrar-curso/cadastrar-curso.component';
@@ -34,6 +35,11 @@ const routes: Routes = [
     path:'professor-edit/:id',
     canActivate: [AuthGuardService],
     component: CadastroComponent,
+  },
+  {
+    path:'atbProf/:id',
+    canActivate: [AuthGuardService],
+    component: ProfIncludeCursoComponent,
   },
   {
     path:'curso-listar',

@@ -58,5 +58,9 @@ export class ListarProfessorComponent implements OnInit {
     )
   }
 
+  atribuirCurso(id: number){
+    this.router.navigate(['atbProf', id])
+  }
+
 
 }
