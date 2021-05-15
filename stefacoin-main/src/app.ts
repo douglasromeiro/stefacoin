@@ -1,3 +1,4 @@
+import { CadastroComponent } from './../../stefacoin-front-main/src/app/pages/public/cadastro/cadastro.component';
 import cors from 'cors';
 import express, { NextFunction, Request, Response } from 'express';
 import logger from 'morgan';
@@ -60,9 +61,9 @@ class App {
     this.app.use('/stefanini', ProfessorRouter);
   }
 
-  /*private authMiddleware() {
-    this.app.use(auth);
-  }*/
+  private authMiddleware() {
+    //this.app.use(auth);
+  }
 }
 
 export default new App().app;

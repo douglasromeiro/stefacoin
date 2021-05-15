@@ -4,7 +4,7 @@ import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { CursoService } from "./../../../services/curso.service";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Component, OnInit } from "@angular/core";
-import Curso from "src/app/models/curso";
+import Curso from "src/app/models/curso"; 
 
 @Component({
   selector: "app-cadastrar-curso",
@@ -14,10 +14,13 @@ import Curso from "src/app/models/curso";
 export class CadastrarCursoComponent implements OnInit {
   id: any;
   curso: Curso;
+
   textoBotao: string = "Cadastrar";
   cadCurso: FormGroup = new FormGroup({
     nome: new FormControl("", Validators.required),
     descricao: new FormControl("", Validators.required),
+    aula: new FormControl([], Validators.required),
+    idProfessor: new FormControl(0, Validators.required),
   });
 
   constructor(
@@ -25,7 +28,7 @@ export class CadastrarCursoComponent implements OnInit {
     private serviceCurso: CursoService,
     private toastr: ToastrService,
     private location: Location,
-    private rota: ActivatedRoute
+    private rota: ActivatedRoute,
   ) {}
   ngOnInit(): void {
     this.rota.params.subscribe((parametros) => {
@@ -44,11 +47,14 @@ export class CadastrarCursoComponent implements OnInit {
   }
 
   cadastraCurso() {
-    if(this.textoBotao == 'Cadastrar') {
+    if (this.textoBotao == "Cadastrar") {
       this.curso = {
         nome: this.cadCurso.get("nome")?.value,
         descricao: this.cadCurso.get("descricao")?.value,
+        idProfessor: 0,
+        aulas: [],
       };
+
       this.serviceCurso.incluir(this.curso).subscribe(
         (success) => {
           this.toastr.success("Cadastrado com sucesso!");
@@ -59,7 +65,7 @@ export class CadastrarCursoComponent implements OnInit {
             this.location.back();
           }, 2000)
       );
-    }else{
+    } else {
       this.editaCurso();
     }
   }
@@ -79,5 +85,7 @@ export class CadastrarCursoComponent implements OnInit {
           this.location.back();
         }, 2000)
     );
+
   }
+
 }

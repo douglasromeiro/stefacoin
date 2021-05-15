@@ -18,16 +18,15 @@ export default class AulaController {
 
   async incluir(aula: Aula) {
     const { nome, duracao, topicos, idCurso } = aula;
-    Validador.validarParametros([{ nome }, { duracao }, { topicos }, { idCurso }]);
+    Validador.validarParametros([{ nome }, { duracao }, { idCurso }, { topicos }]);
 
     const curso = await CursoRepository.obterPorId(idCurso);
 
-    const idAnterior = curso.aulas[curso.aulas.length - 1].id;
-    aula.id = idAnterior ? idAnterior + 1 : 1;
+    aula.id = curso.aulas.length ? curso.aulas[curso.aulas.length-1].id + 1: 1;
+
     curso.aulas.push(aula);
-
+    console.log({ id: idCurso }, curso)
     await CursoRepository.alterar({ id: idCurso }, curso);
-
     return new Mensagem('Aula incluido com sucesso!', {
       id: aula.id,
       idCurso,
@@ -35,11 +34,13 @@ export default class AulaController {
   }
 
   async alterar(id: number, aula: Aula) {
+
     const { nome, duracao, topicos, idCurso } = aula;
+    console.log(aula)
     Validador.validarParametros([{ id }, { idCurso }, { nome }, { duracao }, { topicos }]);
 
     const curso = await CursoRepository.obterPorId(idCurso);
-
+    //ATENTION
     curso.aulas.map((a) => {
       if (a.id === id) {
         Object.keys(aula).forEach((k) => {

@@ -122,7 +122,7 @@ class Database {
   }
 
   private filtrarById<T extends Entity>(dados: T[], id: any) {
-    return dados.filter((d) => d.id === id)[0];
+    return dados.filter((d) => d.id == id)[0];
   }
 
   private writeJson(table, dados) {

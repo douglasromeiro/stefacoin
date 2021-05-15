@@ -20,8 +20,8 @@ export default class CursoController {
   }
 
   async incluir(curso: Curso) {
-    const { nome, descricao/*, aulas, idProfessor*/ } = curso;
-    Validador.validarParametros([{ nome }, { descricao } /*,{ aulas }, { idProfessor }*/]);
+    const { nome, descricao, aulas, idProfessor } = curso;
+    Validador.validarParametros([{ nome }, { descricao } ,{ aulas }, { idProfessor }]);
 
     const id = await CursoRepository.incluir(curso);
 
@@ -31,8 +31,8 @@ export default class CursoController {
   }
 
   async alterar(id: number, curso: Curso) {
-    const { nome, descricao, /*aulas, idProfessor*/ } = curso;
-    Validador.validarParametros([{ id }, { nome }, { descricao }/*, { aulas }, { idProfessor }*/]);
+    const { nome, descricao, aulas, idProfessor } = curso;
+    Validador.validarParametros([{ id }, { nome }, { descricao }, { aulas }, { idProfessor }]);
 
     await CursoRepository.alterar({ id }, curso);
 

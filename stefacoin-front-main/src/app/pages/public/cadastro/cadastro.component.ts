@@ -6,6 +6,7 @@ import { ToastrService } from "ngx-toastr";
 import { Router } from "@angular/router";
 import { Professor } from "src/app/models/professor";
 import { Location } from "@angular/common";
+import { AuthService } from 'src/app/services/auth.service'
 
 @Component({
   selector: "app-cadastro",
@@ -28,10 +29,12 @@ export class CadastroComponent implements OnInit {
     private toastr: ToastrService,
     private router: Router,
     private location: Location,
-    private rota: ActivatedRoute
+    private rota: ActivatedRoute,
+    private AuthService:AuthService
   ) {}
 
   ngOnInit(): void {
+
     this.rota.params.subscribe((parametros) => {
       if (parametros["id"]) {
         this.textoBotao = "Atualizar";
@@ -40,8 +43,8 @@ export class CadastroComponent implements OnInit {
           this.professor = edt;
           this.cadForm.setValue({
             nome: this.professor.nome,
+            senha:"",
             email: this.professor.email,
-            senha: this.professor.senha,
             tipo: this.professor.tipo,
           });
         });

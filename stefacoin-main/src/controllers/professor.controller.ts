@@ -15,12 +15,10 @@ export default class ProfessorController {
     return await ProfessorRepository.obter(filtro);
   }
 
-  // #pegabandeira
   async listar(filtro: FilterQuery<Professor> = {tipo: 1}): Promise<Professor[]> {
     return await ProfessorRepository.listar(filtro);
   }
 
-  // #pegabandeira
   async incluir(professor: Professor) {
     const { nome, email, senha } = professor;
 

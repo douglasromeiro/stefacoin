@@ -7,7 +7,7 @@ import config from '../utils/config/config';
 import UnauthorizedException from '../utils/exceptions/unauthorized.exception';
 import { Validador } from '../utils/utils';
 
-export default class AlunoController {
+export default class AuthController {
   async login(crendeciais: Usuario): Promise<Login> {
     const { email, senha } = crendeciais;
 

@@ -9,9 +9,15 @@
             <h1></h1>
             <p></p>
             <div id="inline">
-              <button type="button" row class="btn btn-success" >
-                Gerenciar Aulas
-              </button>
+    <!-- Button trigger modal -->
+    <button
+      type="button"
+      class="btn btn-success"
+      data-bs-toggle="modal"
+      data-bs-target="#modalSubscriptionForm"
+    >
+      Adicionar Aula
+    </button>
               {{ "   " }}
               <button type="button" class="btn btn-warning" >Editar</button>
               {{ "   " }}
@@ -23,4 +29,82 @@
       </div>
     </div>
   </div>
+  
+  
+  <form id="cad-aula" [formGroup]="cadAl" (ngSubmit)="cadAula()">
+    <div
+      class="modal fade"
+      id="modalSubscriptionForm"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <h4 class="modal-title w-100 font-weight-bold">Cadastro de Aula</h4>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body mx-3">
+            <div class="md-form mb-5">
+              <i class="fas fa-user prefix grey-text"></i>
+              <label data-error="wrong" data-success="right" for="nome-modal"
+                >Nome da aula</label
+              >
+              <input
+                type="text"
+                id="nome-modal"
+                formControlName="nome"
+                class="form-control validate"
+              />
+
+              <label data-error="wrong" data-success="right" for="duracaoModal"
+                >Duração</label
+              >
+              <input
+                type="email"
+                id="duracao-modal"
+                formControlName="duracao"
+                class="form-control validate"
+              />
+
+              <label data-error="wrong" data-success="right" for="idCurso-modal"
+                >idCurso</label
+              >
+              <input
+                type="email"
+                id="idCurso-modal"
+                formControlName="idCurso"
+                class="form-control validate"
+              />
+
+              <label data-error="wrong" data-success="right" for="topicos-modal"
+                >Tópicos</label
+              >
+              <textarea
+                type="email"
+                id="topicos-modal"
+                formControlName="topicos"
+                class="form-control validate"
+                rows="3"
+              ></textarea>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+              <button type="submit" class="btn btn-success">
+                Enviar <i class="fas fa-paper-plane-o ml-1"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
   

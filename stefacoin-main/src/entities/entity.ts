@@ -1,6 +1,7 @@
 export default class Entity {
-  constructor() {}
 
+  constructor() {}
+  
   get id(): number {
     return this.id;
   }
